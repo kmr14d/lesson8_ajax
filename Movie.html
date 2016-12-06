@@ -1,8 +1,8 @@
 <html>
-<!- - 
+<!- - >
 Program Name:   Seminole Movie Connection
-Author: 
-Date: 
+Author: Khalil Randell
+Date: 12/4/16
 Filename:   Movie.html
 - ->
     
@@ -33,7 +33,7 @@ Filename:   Movie.html
     <div class="list-group">
         <a href="#" class="list-group-item">
             <h3 class="list-group-item-heading">Movie Title:</h3>
-            <p class="list-group-item-text lead text-primary" id="Title"> </p>
+            <p class="list-group-item-text lead text-primary" id="Movie Title"> </p>
         </a>
         <a href="#" class="list-group-item">
             <h3 class="list-group-item-heading">Rated:</h3>
@@ -53,6 +53,51 @@ Filename:   Movie.html
             <h3 class="list-group-item-heading">Release Date:</h3>
             <p class="list-group-item-text lead text-primary" id="Released">  </p>
         </a> 
+        
+        <a href="#" class="list-group-item">
+            <h3 class="list-group-item-heading">Country:</h3>
+            <p class="list-group-item-text lead text-primary" id="Country">  </p>
+        </a> 
+        
+        <a href="#" class="list-group-item">
+            <h3 class="list-group-item-heading">Director:</h3>
+            <p class="list-group-item-text lead text-primary" id="Director">  </p>
+        </a> 
+        
+        <a href="#" class="list-group-item">
+            <h3 class="list-group-item-heading">Language:</h3>
+            <p class="list-group-item-text lead text-primary" id="Language">  </p>
+        </a> 
+        
+        <a href="#" class="list-group-item">
+            <h3 class="list-group-item-heading">Runtime:</h3>
+            <p class="list-group-item-text lead text-primary" id="Runtime">  </p>
+        </a> 
+        
+        <a href="#" class="list-group-item">
+            <h3 class="list-group-item-heading">Genre:</h3>
+            <p class="list-group-item-text lead text-primary" id="Genre">  </p>
+        </a> 
+        
+        <a href="#" class="list-group-item">
+            <h3 class="list-group-item-heading">Awards:</h3>
+            <p class="list-group-item-text lead text-primary" id="Awards">  </p>
+        </a> 
+        
+        <a href="#" class="list-group-item">
+            <h3 class="list-group-item-heading">IMDB Rating:</h3>
+            <p class="list-group-item-text lead text-primary" id="IMDB Rating">  </p>
+        </a> 
+        
+        <a href="#" class="list-group-item">
+            <h3 class="list-group-item-heading">Writer:</h3>
+            <p class="list-group-item-text lead text-primary" id="Writer">  </p>
+        </a> 
+        
+        <a href="#" class="list-group-item">
+            <h3 class="list-group-item-heading">Poster:</h3>
+            <p class="list-group-item-text lead text-primary" id="Poster">  </p>
+        </a> 
 
     </div>
 </div> 
@@ -62,7 +107,7 @@ Filename:   Movie.html
                  var message = 't=' + $('#movieName').val();   
                  $.ajax({
                       type: 'GET',
-                      url: 'https://www.omdbapi.com/?',
+                      url:'https://www.omdbapi.com/?',
                       data: message             
                 })
                 .done(function(json){
@@ -71,6 +116,15 @@ Filename:   Movie.html
                      $('#Actors').html(json.Actors);
                      $('#Plot').html(json.Plot);
                      $('#Released').html(json.Released);
+                     $('#Country').html(json.Country);
+                     $('#Director').html(json.Director);
+                     $('#Language').html(json.Language);
+                     $('#Runtime').html(json.Runtime);
+                     $('#Genre').html(json.Genre);
+                     $('#Awards').html(json.Awards);
+                     $('#IMDB Rating').html(json.IMDBRating);
+                     $('#Writer').html(json.Writer);
+                     $('#Poster').html(json.Poster);
                 })
                 .fail(function() {
                       alert("Posting failed.");              
